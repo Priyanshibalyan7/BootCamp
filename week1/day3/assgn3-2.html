@@ -10,10 +10,10 @@
         }
         @keyframes light{
             from{
-                 box-shadow: 0 4px 8px 0 rgba(83, 236, 236, 0.747), 0 6px 20px 0 rgba(238, 103, 137, 0.26);
+                 box-shadow: 0 4px 8px 0 rgba(60, 248, 248, 0.747), 0 6px 20px 0 rgba(238, 103, 137, 0.26);
             }
             to{
-                 box-shadow: 0 4px 8px 0 rgba(46, 116, 221, 0.945), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                 box-shadow: 0 4px 8px 0 rgba(240, 92, 208, 0.945), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         }
         .cont{
@@ -29,12 +29,12 @@
             grid-template-columns: repeat(12 ,1fr);
             grid-template-rows: repeat(5,1fr);
             gap:10px;
-            padding: 10px;
+            padding: 20px;
             font-weight: bold;
             font-size: large;
         }
         .cont div{
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             box-shadow: 0 4px 8px 0 rgba(83, 236, 236, 0.747), 0 6px 20px 0 rgba(238, 103, 137, 0.26);
             border: none;
             border-radius: 15px;
@@ -44,13 +44,14 @@
             animation-duration: 3s;
             animation-iteration-count:infinite;
             animation-play-state: running;
+            animation-direction: alternate;
         }
         .cont>div:hover{
             cursor: pointer;
-            background-color: rgba(133, 176, 255, 0.938);
+            background-color: rgba(180, 133, 255, 0.938);
         }
         .cont>div:active{
-            background-color: rgb(96, 85, 255);
+            background-color: rgb(215, 85, 255);
             color: rgb(255, 255, 255);
         }
         #enter{
