@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+        }
+        th ,td{
+            border: 2px solid black;
+            padding: 20px;
+        }
+        th{
+            background-color: rgb(45, 209, 238);
+        }
+        td{
+            background-color: rgb(120, 205, 255);
+        }
+        .t{
+            background-color: rgb(255, 107, 151);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Weekly Schedule</h1>
+    <table>
+        <thead>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesdat</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" class="t">Morning</td>
+                <td>Maths</td>
+                <td rowspan="2" colspan="2">Science lab</td>
+                <td>History</td>
+                <td>English</td>
+
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>Geography</td>
+                <td>Sports</td>
+            </tr>
+            <tr>
+                <td class="t">Afternoon</td>
+                <td colspan="5" style="background-color: rgb(255, 243, 74);">LUNCH BREAK</td>
+
+            </tr>
+            <tr>
+                <td class="t">Evening</td>
+                <td>Computer science</td>
+                <td>Art</td>
+                <td rowspan="2">Music</td>
+                <td>Drama</td>
+                <td>Free period</td>
+            </tr>
+            <tr>
+                <td class="t"> Late Evening</td>
+                <td colspan="2">Self study</td>
+                <td>Debate</td>
+                <td>Sports</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</body>
+
+</html>
