@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        @keyframes light{
+            from{
+                 box-shadow: 0 4px 8px 0 rgba(83, 236, 236, 0.747), 0 6px 20px 0 rgba(238, 103, 137, 0.26);
+            }
+            to{
+                 box-shadow: 0 4px 8px 0 rgba(46, 116, 221, 0.945), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+        .cont{
+            text-align: center;
+            margin:auto;
+            width: 900px;
+            height: 350px;
+            background-color: rgba(255, 253, 253, 0.87);
+            box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.301), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: none;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(12 ,1fr);
+            grid-template-rows: repeat(5,1fr);
+            gap:10px;
+            padding: 10px;
+            font-weight: bold;
+            font-size: large;
+        }
+        .cont div{
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(83, 236, 236, 0.747), 0 6px 20px 0 rgba(238, 103, 137, 0.26);
+            border: none;
+            border-radius: 15px;
+            padding: 10px;
+            animation: light;
+            animation-delay: 1s;
+            animation-duration: 3s;
+            animation-iteration-count:infinite;
+            animation-play-state: running;
+        }
+        .cont>div:hover{
+            cursor: pointer;
+            background-color: rgba(133, 176, 255, 0.938);
+        }
+        .cont>div:active{
+            background-color: rgb(96, 85, 255);
+            color: rgb(255, 255, 255);
+        }
+        #enter{
+            grid-column: 11/13;
+        }
+        #shift{
+            grid-column: 11/13;
+        }
+        #space{
+            grid-column: 5/9;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(233, 55, 55);">KEYBOARD</h1>
+    <div class="cont">
+        <div> ~ </div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>Delete</div>
+        <div>Tab</div>
+        <div>Q</div>
+        <div>W</div>
+        <div>E</div>
+        <div>R</div>
+        <div>T</div>
+        <div>Y</div>
+        <div>U</div>
+        <div>I</div>
+        <div>O</div>
+        <div>P</div>
+        <div>/</div>
+        <div>Caps</div>
+        <div>A</div>
+        <div>S</div>
+        <div>D</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div id="enter">Enter</div>
+        <div>Shift</div>
+        <div>Z</div>
+        <div>X</div>
+        <div>C</div>
+        <div>V</div>
+        <div>B</div>
+        <div>N</div>
+        <div> > </div>
+        <div> < </div>
+        <div>M</div>
+        <div id="shift">Shift</div>
+        <div>Windows</div>
+        <div>ctrl</div>
+        <div>Options</div>
+        <div>Alt</div>
+        <div id="space">Space</div>
+        <div>alt</div>
+        <div>Option</div>
+        <div> ></div>
+        <div> < </div>
+    </div>
+    
+</body>
+</html>
