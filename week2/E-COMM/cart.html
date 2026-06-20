@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naptol</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <!-- <style>
+        * {
+            text-align: center;
+        }
+        
+
+        #root {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #root>div {
+            /* border: 1px solid red; */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+        }
+
+        img {
+            width: 200px;
+            height: 250px;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: rgb(93, 196, 240);
+            color: rgb(32, 32, 33);
+            font-size: 15px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(55, 74, 247);
+            cursor: pointer;
+            color: white;
+        }
+
+        span {
+            color: rgb(238, 15, 15);
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1 style="color: rgb(38, 0, 255);">Welcome to Naptol Cart Page</h1>
+
+    <h1 id="total" style="color: rgb(248, 41, 41);">Total cart value: </h1>
+    <a href="cart.html">
+        <button>Back to Products</button>
+    </a>
+
+    <div id="root">
+        <!-- All Product come here... -->
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let cartArr = JSON.parse(localStorage.getItem("cart")) || [];
+
+    displayCart(cartArr)
+
+    const totalCartValue = cartArr.reduce((acc, el) => {
+        return acc + el.price
+    }, 0)
+
+    console.log(totalCartValue);
+    document.querySelector("#total").innerText = `Total cart value: ${totalCartValue} `
+
+
+    function displayCart(arr) {
+
+        document.querySelector("#root").innerText = ""
+        arr.forEach((el, i) => {
+
+            const box = document.createElement("div");
+
+            const image = document.createElement("img");
+            image.setAttribute("src", el.image);
+
+            const title = document.createElement("h3");
+            title.innerHTML = `<span>Title</span>:${el.title}`
+
+            const category = document.createElement("h3");
+            category.innerText = ` Category:${el.category}`
+
+            const description = document.createElement("p");
+            description.innerText = `Description: ${el.description}`
+
+            const price = document.createElement("button");
+            price.innerText = `Price: ${el.price}`
+
+            const rating = document.createElement("button");
+            rating.innerText = `Rating: ${el.rating.rate}`
+
+            const hrr = document.createElement("hr");
+
+            const removebtn = document.createElement("button");
+            removebtn.innerText = "Remove"
+
+            removebtn.addEventListener("click", function () {
+                cartArr.splice(i, 1)
+
+                localStorage.setItem("cart", JSON.stringify(cartArr));
+                // alert("Product Removed from cart")
+                 Swal.fire({
+                    title: "Good job!",
+                    text: "Product removed from cart",
+                    icon: "success"
+                });
+                displayCart(cartArr)
+                const totalCartValue = cartArr.reduce((acc, el) => {
+                    return acc + el.price
+                }, 0)
+
+                console.log(totalCartValue);
+                document.querySelector("#total").innerText = `Total cart value: ${totalCartValue} `
+
+
+
+            })
+
+            box.append(image, title, category, description, price, rating, hrr, removebtn);
+
+            document.querySelector("#root").append(box)
+        })
+    }
+</script>

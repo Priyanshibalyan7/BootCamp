@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naptol</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        * {
+            text-align: center;
+        }
+
+        #root {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #root>div {
+            /* border: 1px solid red; */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 350px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: rgb(108, 199, 238);
+            color: rgb(32, 32, 33);
+            font-size: 15px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(63, 42, 250);
+            cursor: pointer;
+            color: white;
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1 style="color: rgb(65, 222, 233);">Welcome to Naptol Product Page</h1>
+
+    <input type="text" id="search" placeholder="search Product ..." oninput="search()">
+    <a href="cart.html">
+        <button> cart 🛒</button>
+    </a>
+
+    <select id="sort" onchange="sort()">
+        <option value="asc">asc</option>
+        <option value="dsc">dsc</option>
+    </select>
+
+    <div id="root">
+        <!-- All Product come here... -->
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let bag = []
+    let cartArr = JSON.parse(localStorage.getItem("cart")) || []
+    const api = "https://fakestoreapi.com/products";
+
+    fetch(api)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            bag = data
+            displayCart(data);
+        }
+        ).catch((err) => console.log(err)
+        )
+
+
+    function displayCart(arr) {
+        document.querySelector("#root").innerText = ""
+        arr.forEach((el) => {
+
+            const box = document.createElement("div");
+
+            const image = document.createElement("img");
+            image.setAttribute("src", el.image);
+
+            const title = document.createElement("h3");
+            title.innerText = `Title: ${el.title}`
+
+            const category = document.createElement("h3");
+            category.innerText = `Category: ${el.category}`
+
+            const description = document.createElement("p");
+            description.innerText = `Description: ${el.description}`
+
+            const price = document.createElement("button");
+            price.innerText = `Price: ${el.price}`
+
+            const rating = document.createElement("button");
+            rating.innerText = `Rating: ${el.rating.rate}`
+
+            const hrr = document.createElement("hr");
+
+            const cart = document.createElement("button");
+            cart.innerText = "Add to Cart"
+
+            cart.addEventListener("click", function () {
+                cartArr.push(el);
+
+                localStorage.setItem("cart", JSON.stringify(cartArr));
+                // alert("Product added to cart")
+                Swal.fire({
+                    title: "Product added to cart.",
+                    width: 600,
+                    padding: "3em",
+                    color: "#716add",
+                    background: "#fff url(/images/trees.png)",
+                    backdrop: `
+    rgba(0,0,123,0.4)
+    url("/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+                });
+            })
+
+            box.append(image, title, category, description, price, rating, hrr, cart);
+
+            document.querySelector("#root").append(box)
+        })
+    }
+
+    function search() {
+        console.log(bag);
+
+        const query = document.querySelector("#search").value
+
+        const filterData = bag.filter((el) => {
+            return el.category.toLowerCase().includes(query.toLowerCase())
+        });
+
+        console.log(filterData);
+
+        displayCart(filterData)
+
+
+    }
+
+
+    function sort() {
+        const query = document.querySelector("#sort").value
+
+        if (query == "asc") {
+            const ans = bag.sort((a, b) => a.price - b.price);
+            displayCart(ans)
+        } else {
+            const ans = bag.sort((b, a) => a.price - b.price);
+            displayCart(ans)
+        }
+
+    }
+</script>
