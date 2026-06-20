@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini calculator</title>
+</head>
+<body>
+    <div>
+        <h2>Mini Calculator</h2>
+        <label>
+        Enter the 1st number:
+        <input type="number" id="1n" min="0" placeholder="number 1">
+    </label><br><br>
+    <label> Enter the 2nd number:
+        <input type="number" id="2n" min="0" placeholder="number 2">
+    </label>
+    <br>
+        <br>
+        <button onclick="add()">Addition</button><br><br>
+        <button onclick="sub()">Subtract</button><br><br>
+        <button onclick="multiply()">multiply</button><br><br>
+        <button onclick="divide()">Division</button>
+
+    </div>
+    <script>
+        
+        function add(){
+            let x= +document.getElementById("1n").value
+            let y= +document.getElementById("2n").value
+            let ans = x+y
+            alert("Ans : " + ans)
+        }
+        function sub(){
+            let x= document.getElementById("1n").value
+            let y= document.getElementById("2n").value
+            let ans = x-y
+            alert("Ans : " + ans)
+        }
+        function multiply(){
+            let x= document.getElementById("1n").value
+            let y= document.getElementById("2n").value
+            let ans = x*y
+            alert("Ans : " + ans)
+        }
+        function divide(){
+            let x= document.getElementById("1n").value
+            let y= document.getElementById("2n").value
+            let ans = x/y
+            alert("Ans : " + ans)
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
