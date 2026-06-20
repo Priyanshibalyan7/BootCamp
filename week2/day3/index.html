@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital app</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <!-- Dont make any changes here -->
+  <h1>Hospital - Doctor Records</h1>
+
+  <div>
+    <!-- ***** We are using form here  ****  -->
+    <form>
+      <label>Doctor Name :
+        <input id="name" type="text" placeholder="Enter Doctor Name" required /><br /><br>
+      </label><br />
+
+      <label>Doctor ID :
+        <input id="docID" type="number" placeholder="Enter Doctor ID" min="1" required /><br /><br>
+      </label><br />
+      <label>Specialization :
+        <select id="dept" required>
+          <option value="">Select Specialization</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="ENT">ENT</option>
+          <option value="Dentist">Dentist</option>
+          <option value="COVID">COVID</option>
+          <option value="Gynecologist">Gynecologist</option>
+      </label><br />
+      </select><br /><br>
+
+      <label>Experience :
+
+        <input id="exp" type="number" placeholder="Experience in Years" min="0" required /><br /><br>
+      </label>
+      <br />
+
+      <label>Email Address :
+        <input type="text" id="email" placeholder="Enter Email Address" required /><br /><br>
+
+      </label><br />
+
+      <label>Mobile Number :
+        <input id="mbl" type="tel" placeholder="Enter Mobile number" required /><br /><br>
+
+      </label><br />
+
+      <input type="submit" />
+
+    </form>
+    <table>
+      <!-- Dont change order of columns -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Doctor ID</th>
+          <th>Specialization</th>
+          <th>Experience in years</th>
+          <th>Email address</th>
+          <th>Mobile Number</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ******* Append your output here ********* -->
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+
+<script src="index.js"></script>
