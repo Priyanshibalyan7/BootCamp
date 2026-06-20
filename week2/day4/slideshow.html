@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#74ebd5,#9face6);
+            text-align:center;
+            padding:40px;
+        }
+
+        h1{
+            margin-bottom:20px;
+            color:white;
+        }
+
+        .slider{
+            width:700px;
+            height:400px;
+            margin:auto;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .slider img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .buttons{
+            margin-top:25px;
+        }
+
+        button{
+            padding:12px 25px;
+            margin:10px;
+            border:none;
+            border-radius:10px;
+            font-size:16px;
+            cursor:pointer;
+            color:rgb(0, 0, 0);
+            background:#f386fdb9;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+            background:#4897ff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Automatic Image Slideshow</h1>
+
+    <div class="slider">
+        <img id="slide" src="" alt="Slideshow">
+    </div>
+
+    <div class="buttons">
+        <button onclick="startSlide()">Start</button>
+        <button onclick="stopSlide()">Stop</button>
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+<script>
+
+    // 20 dummy images
+    let images = [
+        "https://picsum.photos/id/1011/700/400",
+        "https://picsum.photos/id/1015/700/400",
+        "https://picsum.photos/id/1016/700/400",
+        "https://picsum.photos/id/1020/700/400",
+        "https://picsum.photos/id/1024/700/400",
+        "https://picsum.photos/id/1025/700/400",
+        "https://picsum.photos/id/1035/700/400",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJMRkNdaNgMUKpZb4qarTdC2OBW0rdEX-2OA&s",
+        "https://www.lifeinthefingerlakes.com/wp-content/uploads/2019/10/finger-lakes-sunset.jpg",
+        "https://picsum.photos/id/1041/700/400",
+        "https://picsum.photos/id/1042/700/400",
+        "https://picsum.photos/id/1043/700/400",
+        "https://picsum.photos/id/1050/700/400",
+        "https://picsum.photos/id/1052/700/400",
+        "https://picsum.photos/id/1060/700/400",
+        "https://picsum.photos/id/1062/700/400",
+        "https://picsum.photos/id/1069/700/400",
+        "https://picsum.photos/id/1074/700/400",
+        "https://picsum.photos/id/1080/700/400",
+        "https://picsum.photos/id/1084/700/400"
+    ];
+
+    let index = 0;
+    let slide = document.getElementById("slide");
+
+    slide.src = images[index];
+
+    let interval = setInterval(autoSlide, 2000);
+
+    function autoSlide() {
+        index++;
+        if(index >= images.length){
+            index = 0;
+        }
+        slide.src = images[index];
+    }
+
+    function startSlide() {
+        clearInterval(interval);
+        interval = setInterval(autoSlide, 2000);
+    }
+
+    function stopSlide() {
+        clearInterval(interval);
+    }
+
+    function nextSlide() {
+        clearInterval(interval); // stop auto slideshow
+        index++;
+        if(index >= images.length){
+            index = 0;
+        }
+        slide.src = images[index];
+    }
+
+    function prevSlide() {
+        clearInterval(interval); // stop auto slideshow
+        index--;
+        if(index < 0){
+            index = images.length - 1;
+        }
+        slide.src = images[index];
+    }
+
+</script>
+
+</body>
+</html>
