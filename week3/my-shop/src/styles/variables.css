@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --ink:     #0d0d0d;
+  --paper:   #f5f3ee;
+  --cream:   #eae6dd;
+  --accent:  #c84b2f;
+  --gold:    #d4a847;
+  --muted:   #7a7570;
+  --card:    #ffffff;
+  --border:  #e0dbd3;
+  --shadow:  0 4px 24px rgba(13,13,13,.08);
+  --r:       12px;
+  --trans:   all .25s cubic-bezier(.4,0,.2,1);
+}
