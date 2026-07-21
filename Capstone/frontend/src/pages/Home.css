@@ -1,0 +1,35 @@
+body {
+
+    background: #f8fafc;
+
+}
+
+.featured {
+
+    padding: 80px;
+
+}
+
+.featured h2 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 60px;
+
+    color: #1f2937;
+
+}
+
+.course-grid {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 35px;
+
+}

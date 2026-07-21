@@ -8,8 +8,6 @@ async function connecttoDB(){
     }catch(error){
         console.log("failed to connect database : ", error);
         process.exit(1)
-        
-
     }
 }
 export default connecttoDB;

@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 80px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+}
+
+.logo a{
+
+    text-decoration:none;
+    color:#4F46E5;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#444;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#4F46E5;
+
+}
+
+.nav-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn,
+.dashboard-btn{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn{
+
+    background:white;
+
+    color:#4F46E5;
+
+    border:2px solid #4F46E5;
+
+}
+
+.signup-btn{
+
+    background:#4F46E5;
+
+    color:white;
+
+}
+
+.dashboard-btn{
+
+    background:#10B981;
+
+    color:white;
+
+}
+
+.logout-btn{
+
+    background:#EF4444;
+
+    color:white;
+
+}
+
+.login-btn:hover,
+.signup-btn:hover,
+.dashboard-btn:hover,
+.logout-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.welcome-text{
+
+    font-weight:600;
+
+    color:#4B5563;
+
+}
